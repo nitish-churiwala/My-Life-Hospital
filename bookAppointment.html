@@ -6,7 +6,6 @@
     <title>Book Appointment - Hospital Web Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
     <div class="navbar">
@@ -24,12 +23,11 @@
     </div>
 
     <div class="hero3">
-        <!-- <h1>Book an Appointment</h1> -->
-        <img src="bookAppointment.jpg" alt="Hospital Image 2" class="active">
+        <img src="bookAppointment.jpg" alt="Hospital Image" class="active">
     </div>
 
     <div class="main-content">
-        <form class="appointment-form" action="submitAppointment.html" method="post">
+        <form class="appointment-form" id="appointmentForm" action="submitAppointment.html" method="post" onsubmit="return handleSubmit(event)">
             <div class="form-group">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -42,27 +40,22 @@
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
             </div>
-
             <div class="form-group">
-                <label for="Address">Street:</label>
+                <label for="Street">Street:</label>
                 <input type="text" id="Street" name="Street" required>
             </div>
-
             <div class="form-group">
-                <label for="Address">City:</label>
+                <label for="City">City:</label>
                 <input type="text" id="City" name="City" required>
             </div>
-
             <div class="form-group">
-                <label for="Address">State:</label>
+                <label for="State">State:</label>
                 <input type="text" id="State" name="State" required>
             </div>
-
             <div class="form-group">
-                <label for="Address">Pin Code:</label>
+                <label for="Pin">Pin Code:</label>
                 <input type="text" id="Pin" name="Pin" required>
             </div>
-
             <div class="form-group">
                 <label for="doctor">Select Doctor:</label>
                 <select id="doctor" name="doctor" required>
@@ -70,8 +63,8 @@
                     <option value="drSmith">Dr. Rohit</option>
                     <option value="drDoe">Dr. Rahul</option>
                     <option value="drBrown">Dr. Nitish</option>
-                    <option value="drBrown">Dr. Abhishek</option>
-                    <option value="drBrown">Dr. Harsh</option>
+                    <option value="drAbhishek">Dr. Abhishek</option>
+                    <option value="drHarsh">Dr. Harsh</option>
                 </select>
             </div>
             <div class="form-group">
@@ -85,8 +78,6 @@
             <button type="submit" class="btn-submit">Submit</button>
         </form>
     </div>
-
-
 
     <footer>
         <div class="footer-container">
@@ -121,5 +112,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -62,3 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
     typeAndEraseLoop();
 });
 
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+    alert('Booked successfully');
+    document.getElementById('appointmentForm').reset();
+    return false;
+}
+
+
+window.onload = function() {
+    var today = new Date();
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var minDate = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('date').setAttribute('min', minDate);
+}
