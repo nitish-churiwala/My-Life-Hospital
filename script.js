@@ -80,3 +80,4 @@ window.onload = function() {
     var minDate = yyyy + '-' + mm + '-' + dd;
     document.getElementById('date').setAttribute('min', minDate);
 }
+

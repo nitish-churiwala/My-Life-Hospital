@@ -1,18 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hospital Web Page</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+   
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0">
+            <img src="logo.jpg" width="60px" height="60px" /> My Life
+            Hospital
+          </h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="doctor.html" class="nav-item nav-link">Doctors</a>
+            <a href="bookAppointment.html" class="nav-item nav-link"
+              >Book Appointment</a
+            >
+            <a href="emergency.html" class="nav-item nav-link">Emergency</a>
+            <a href="about.html" class="nav-item nav-link">About Us</a>
+          </div>
+        </div>
+      </nav>
 
 
+      <div
+        id="header-carousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="w-100" src="hosp1.jpg" alt="Image" />
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h5 class="text-white text-uppercase mb-3 animated slideInDown">
+                  Not everyone can gain your trust easily.
+                </h5>
+                <h1 class="display-1 text-white mb-md-4 animated zoomIn">
+                  We are here to Change that.
+                </h1>
+                <a
+                  href="about.html"
+                  class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                >
+                  About Us</a
+                >
+                <a
+                  href="emergency.html"
+                  class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
 
-</head>
-<body>
-    <div class="navbar">
+          <div class="carousel-item">
+            <img class="w-100" src="hosp2.jpg" alt="Image" />
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h5 class="text-white text-uppercase mb-3 animated slideInDown">
+                  Anywhere and Anytime.
+                </h5>
+                <h1 class="display-1 text-white mb-md-4 animated zoomIn">
+                  Introducing Video Consultations!
+                </h1>
+                <a
+                  href="bookAppointment.html"
+                  class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                >
+                  Book</a
+                >
+                <a
+                  href="about.html"
+                  class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img class="w-100" src="hosp3.jpg" alt="Image" />
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h5 class="text-white text-uppercase mb-3 animated slideInDown">
+                  We care for you.
+                </h5>
+                <h1 class="display-1 text-white mb-md-4 animated zoomIn">
+                  Best in-class medical facilities.
+                </h1>
+                <a
+                  href="about.html"
+                  class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                >
+                  About Us</a
+                >
+                <a
+                  href="emergency.html"
+                  class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img class="w-100" src="hosp4.jpg" alt="Image" />
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h5 class="text-white text-uppercase mb-3 animated slideInDown">
+                    Contact our reception
+                </h5>
+                <h1 class="display-1 text-white mb-md-4 animated zoomIn">
+                  Emergency! We are there for you. 
+                </h1>
+                <a
+                  href="emergency.html"
+                  class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                >
+                  Emergency</a
+                >
+                <a
+                  href="about.html"
+                  class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+    <!-- <div class="navbar">
         <div class="logo">
             <img src="logo.jpg" alt="Hospital Logo">
             <a href="#">My Life Hospital</a>
@@ -24,62 +204,91 @@
             <a href="emergency.html">Emergency</a>
             <a href="about.html">About Us</a>
         </div>
-    </div>
-    <div class="hero">
-        <img src="hosp1.jpg" class="active" alt="Hospital Image 1">
-        <img src="hosp2.jpg" alt="Hospital Image 2">
-        <img src="hosp3.jpg" alt="Hospital Image 3">
-        <img src="hosp4.jpg" alt="Hospital Image 4">
-        <h1>Welcome to Our Hospital</h1>
-    </div>
+    </div> -->
+
+
     <div class="main-content">
-        <h2>About Our Hospital</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et imperdiet felis. Phasellus sed lectus vestibulum, scelerisque lectus sit amet, venenatis felis. Praesent at elit eu sem tincidunt vestibulum at a erat. Integer consectetur mi ut enim convallis, nec tristique arcu laoreet. Morbi fringilla justo ut odio aliquam, ac fermentum erat gravida. Nullam ac urna eget libero commodo ullamcorper in sed arcu. Cras sed lorem sapien.</p>
-        <p>Quisque auctor orci vitae massa dapibus, non vehicula justo pellentesque. Sed dictum massa orci, at tempus ligula pharetra at. Curabitur non libero at urna tincidunt malesuada. Curabitur finibus tellus nec massa viverra, sed ullamcorper felis dignissim. Suspendisse potenti. Proin in facilisis est. Sed ac libero sed justo pharetra facilisis. Fusce vitae dui sit amet ligula tincidunt interdum. Nunc lacinia libero sed tortor mollis, a interdum lacus consectetur.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo accusantium deserunt, accusamus possimus et quaerat alias sequi aliquam sit soluta nulla unde veritatis temporibus illo, culpa hic aspernatur natus cum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis debitis quasi, magni voluptatem beatae recusandae doloremque vitae eos sed quisquam qui distinctio quo neque facilis, ducimus quae earum deserunt nam!</p>
-    
+      <h2 style="text-align: left;">About Our Hospital</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et
+        imperdiet felis. Phasellus sed lectus vestibulum, scelerisque lectus sit
+        amet, venenatis felis. Praesent at elit eu sem tincidunt vestibulum at a
+        erat. Integer consectetur mi ut enim convallis, nec tristique arcu
+        laoreet. Morbi fringilla justo ut odio aliquam, ac fermentum erat
+        gravida. Nullam ac urna eget libero commodo ullamcorper in sed arcu.
+        Cras sed lorem sapien.
+      </p>
+      <p>
+        Quisque auctor orci vitae massa dapibus, non vehicula justo
+        pellentesque. Sed dictum massa orci, at tempus ligula pharetra at.
+        Curabitur non libero at urna tincidunt malesuada. Curabitur finibus
+        tellus nec massa viverra, sed ullamcorper felis dignissim. Suspendisse
+        potenti. Proin in facilisis est. Sed ac libero sed justo pharetra
+        facilisis. Fusce vitae dui sit amet ligula tincidunt interdum. Nunc
+        lacinia libero sed tortor mollis, a interdum lacus consectetur.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+        accusantium deserunt, accusamus possimus et quaerat alias sequi aliquam
+        sit soluta nulla unde veritatis temporibus illo, culpa hic aspernatur
+        natus cum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Blanditiis debitis quasi, magni voluptatem beatae recusandae doloremque
+        vitae eos sed quisquam qui distinctio quo neque facilis, ducimus quae
+        earum deserunt nam!
+      </p>
     </div>
-    
-
-
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bookAppointment.html">Book Appointment</a></li>
-                    <li><a href="emergency.html">Emergency</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>123 Hospital Street,<br> Bangalore, Karnataka, 560029</p>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: nitish@gmail.com</p>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <div class="social-media">
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3 style="color: white;">Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bookAppointment.html">Book Appointment</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 My Life Hospital. All rights reserved.</p>
+        <div class="footer-column">
+          <h3 style="color: white;">Contact Us</h3>
+          <p>
+            123 Hospital Street,<br />
+            Bangalore, Karnataka, 560029
+          </p>
+          <p>Phone: 123-456-7890</p>
+          <p>Email: nitish@gmail.com</p>
         </div>
+        <div class="footer-column">
+          <h3 style="color: white;">Follow Us</h3>
+          <div class="social-media">
+            <a href="https://www.facebook.com"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 My Life Hospital. All rights reserved.</p>
+      </div>
     </footer>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-</body>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  </body>
 </html>
-
-
-
-
