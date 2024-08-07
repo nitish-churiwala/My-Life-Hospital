@@ -81,3 +81,53 @@ window.onload = function() {
     document.getElementById('date').setAttribute('min', minDate);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+
+    if('geolocation' in navigator){
+        navigator.geolocation.getCurrentPosition(pos=>{
+
+            // Display the map
+            // var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 13);
+            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            // }).addTo(map);
+            // L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
+            //     .bindPopup('You are here')
+            //     .openPopup();
+            
+            var ourLoc = L.map('map').setView([12.936354284593302, 77.6062412905495], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(ourLoc);
+            L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(ourLoc)
+                .bindPopup('Our Location')
+                .openPopup();
+            
+
+            document.getElementById("map").classList.remove("d-none");
+
+        },error=>{
+            let msg="";
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    msg="User Denied Permission";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    msg="Can't Locate User's Position";
+                    break;
+                case error.TIMEOUT:
+                    msg="Time out";
+                    break;
+            }
+         let errorArea=document.getElementById("errorArea");
+         errorArea.innerHTML=msg;
+         errorArea.classList.remove("d-none");
+
+
+        })
+
+    }else{
+        console.log("Update your browser to get Geolocation Object");
+    }
+
+});
