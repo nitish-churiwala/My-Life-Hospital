@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Hospital Web Page</title>
 
     <link
@@ -19,136 +19,223 @@
 
     <link href="bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" style="background-color: #2e3c52;">
-          <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0">
-              <img src="logo.jpg" width="60px" height="60px" /> My Life
-              Hospital
-            </h1>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
-            <span class="fa fa-bars"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link" style="color: white;">Home</a>
-              <a href="doctor.html" class="nav-item nav-link" style="color: white;" >Doctors</a>
-              <a href="bookAppointment.html" class="nav-item nav-link" style="color: white;"
-                >Book Appointment</a
-              >
-              <a href="emergency.html" class="nav-item nav-link" style="color: white;">Emergency</a>
-              <a href="about.html" class="nav-item nav-link active" style="color: white;">About Us</a>
-            </div>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0"
+        style="background-color: #2e3c52"
+      >
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0">
+            <img src="logo.jpg" width="60px" height="60px" /> My Life Hospital
+          </h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link" style="color: white"
+              >Home</a
+            >
+            <a href="doctor.html" class="nav-item nav-link" style="color: white"
+              >Doctors</a
+            >
+            <a
+              href="bookAppointment.html"
+              class="nav-item nav-link"
+              style="color: white"
+              >Book Appointment</a
+            >
+            <a
+              href="emergency.html"
+              class="nav-item nav-link"
+              style="color: white"
+              >Emergency</a
+            >
+            <a
+              href="about.html"
+              class="nav-item nav-link active"
+              style="color: white"
+              >About Us</a
+            >
           </div>
-        </nav>
-    </div>
-    
-    <div class="hero2">
-        <video autoplay muted loop>
-            <source src="hospital-about.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- <h1 style="color: #EEF9FF; margin-top: 70px;">About Us</h1> -->
-    </div>
-    
-    <div class="main-content2">
-        <h2>Our Mission</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur labore obcaecati veritatis ipsam voluptas, enim tenetur tempora aperiam, consequatur ipsum aspernatur exercitationem magnam excepturi aliquam, recusandae laudantium eaque architecto ullam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ipsam at quibusdam accusantium, quod necessitatibus distinctio ullam sit veniam dicta harum ut pariatur laboriosam neque eveniet facere accusamus voluptas officia.</p>
-        
-        <h2>Our History</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nulla repellendus beatae! Nisi qui soluta est quasi maiores accusantium at, suscipit nobis laudantium nulla, illo beatae ratione, magni autem fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed dolore voluptatibus vel quisquam officiis odio provident accusamus ea aut adipisci aspernatur corrupti hic rem quibusdam exercitationem ab, harum enim!</p>
-        
-        <h2>Our Team</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum nulla aliquid eos maxime sed ipsum possimus soluta excepturi earum quos, modi sint mollitia explicabo ducimus nihil voluptatum perferendis praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus earum ipsum fugit ipsa optio incidunt odio eos non dolorum ipsam corporis quisquam ut quas labore assumenda soluta itaque, sapiente quod.</p>
-        
-        <h2>Facilities</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aliquid laudantium fugit mollitia unde corrupti animi ipsum aspernatur, aliquam eveniet ratione praesentium facere optio quibusdam repellat vitae quae tempora cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero fugiat voluptates deleniti, error in repudiandae a quis consequuntur minus eaque odit quasi obcaecati voluptate, cumque neque qui incidunt numquam.</p>
-        
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p><strong>Address:</strong> 123 Hospital Road, Bangalore, Karnataka, 560029</p>
-            <p><strong>Phone:</strong> <a href="tel:+1234567890">+91 1234567895</a></p>
-            <p><strong>Email:</strong> <a href="mailto:info@hospital.com">info@hospital.com</a></p>
-            <div class="social-media">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.linkedin.com" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://www.twitter.com" target="_blank">
-                    <img src="X.jpeg" alt="Twitter">
-                </a>
-                <a href="mailto:info@hospital.com">
-                    <img src="email-img.jpeg" alt="Email">
-                </a>
-            </div>
         </div>
-
-        <h2>Our Location</h2>
-        <div id="map" style="height: 300px; width: 600px; margin-left: 450px; margin-top: 40px;"></div>
-        <div id="errorArea" class="d-none" style="color: red;"></div>
-
-
+      </nav>
     </div>
 
+    <div class="hero2">
+      <video autoplay muted loop>
+        <source src="hospital-about.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- <h1 style="color: #EEF9FF; margin-top: 70px;">About Us</h1> -->
+    </div>
 
-    <br><br><br>
+    <div class="main-content2">
+      <h2>Our Mission</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        labore obcaecati veritatis ipsam voluptas, enim tenetur tempora aperiam,
+        consequatur ipsum aspernatur exercitationem magnam excepturi aliquam,
+        recusandae laudantium eaque architecto ullam. Lorem ipsum dolor sit,
+        amet consectetur adipisicing elit. Commodi ipsam at quibusdam
+        accusantium, quod necessitatibus distinctio ullam sit veniam dicta harum
+        ut pariatur laboriosam neque eveniet facere accusamus voluptas officia.
+      </p>
 
+      <h2>Our History</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nulla
+        repellendus beatae! Nisi qui soluta est quasi maiores accusantium at,
+        suscipit nobis laudantium nulla, illo beatae ratione, magni autem fugit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed
+        dolore voluptatibus vel quisquam officiis odio provident accusamus ea
+        aut adipisci aspernatur corrupti hic rem quibusdam exercitationem ab,
+        harum enim!
+      </p>
 
-    
+      <h2>Our Team</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eum
+        nulla aliquid eos maxime sed ipsum possimus soluta excepturi earum quos,
+        modi sint mollitia explicabo ducimus nihil voluptatum perferendis
+        praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repellendus earum ipsum fugit ipsa optio incidunt odio eos non dolorum
+        ipsam corporis quisquam ut quas labore assumenda soluta itaque, sapiente
+        quod.
+      </p>
 
+      <h2>Facilities</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
+        aliquid laudantium fugit mollitia unde corrupti animi ipsum aspernatur,
+        aliquam eveniet ratione praesentium facere optio quibusdam repellat
+        vitae quae tempora cum? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Quisquam vero fugiat voluptates deleniti, error in
+        repudiandae a quis consequuntur minus eaque odit quasi obcaecati
+        voluptate, cumque neque qui incidunt numquam.
+      </p>
 
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>
+          <strong>Address:</strong> 123 Hospital Road, Bangalore, Karnataka,
+          560029
+        </p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+1234567890">+91 1234567895</a>
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:info@hospital.com">info@hospital.com</a>
+        </p>
+        <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank">
+            <img src="X.jpeg" alt="Twitter" />
+          </a>
+          <a href="mailto:info@hospital.com">
+            <img src="email-img.jpeg" alt="Email" />
+          </a>
+        </div>
+      </div>
 
+      <h2>Our Location</h2>
+      <div
+        id="map"
+        style="
+          height: 300px;
+          width: 600px;
+          margin-left: 450px;
+          margin-top: 40px;
+        "
+      ></div>
+      <div id="errorArea" class="d-none" style="color: red"></div>
+
+      <h2>Route between Two Locations</h2>
+
+      <!-- Input fields for Google Maps URLs -->
+      <div class="route-container">
+        <div class="route-group" style="padding: 10px">
+          <label for="startUrl">Start Location (Maps URL):</label>
+          <input type="text" id="startUrl" placeholder="Link" />
+        </div>
+        <br />
+        <div class="route-group" style="padding: 10px">
+          <label for="endUrl">End Location (Maps URL) : </label>
+          <input type="text" id="endUrl" placeholder="Link" />
+        </div>
+        <br /><br />
+        <button class="btn-consult" onclick="showRoute()" style="margin-left: 10px;">Show Route</button>
+      </div>
+    </div>
+
+    <br /><br /><br />
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bookAppointment.html">Book Appointment</a></li>
-                    <li><a href="emergency.html">Emergency</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Contact Us</h3>
-                <p>123 Hospital Street,<br> Bangalore, Karnataka, 560029</p>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: nitish@gmail.com</p>
-            </div>
-            <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Follow Us</h3>
-                <div class="social-media">
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3 style="color: #eef9ff">Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bookAppointment.html">Book Appointment</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 My Life Hospital. All rights reserved.</p>
+        <div class="footer-column">
+          <h3 style="color: #eef9ff">Contact Us</h3>
+          <p>
+            123 Hospital Street,<br />
+            Bangalore, Karnataka, 560029
+          </p>
+          <p>Phone: 123-456-7890</p>
+          <p>Email: nitish@gmail.com</p>
         </div>
+        <div class="footer-column">
+          <h3 style="color: #eef9ff">Follow Us</h3>
+          <div class="social-media">
+            <a href="https://www.facebook.com"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 My Life Hospital. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-</body>
+  </body>
 </html>

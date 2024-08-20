@@ -1,0 +1,14 @@
+<!ELEMENT doctors (doctor+)>
+<!ELEMENT doctor (name, qualification, specialization, opd_time)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT qualification (#PCDATA)>
+<!ELEMENT specialization (#PCDATA)>
+<!ELEMENT opd_time (#PCDATA)>
+
+<!ENTITY hospitalName "Your Domain Name Hospital">
+<!ENTITY doc1 "Dr. Rohit">
+<!ENTITY doc2 "Dr. Arman">
+<!ENTITY doc3 "Dr. Rahul">
+<!ENTITY doc4 "Dr. Neha">
+<!ENTITY doc5 "Dr. Aditi">
+<!ENTITY doc6 "Dr. Sameer">

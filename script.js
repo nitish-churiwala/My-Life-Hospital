@@ -2,12 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.hero img');
     let currentImageIndex = 0;
 
-    setInterval(() => {
-        images[currentImageIndex].classList.remove('active');
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        images[currentImageIndex].classList.add('active');
-    }, 5000); // Change image every 20 seconds
+    if (images.length > 0) {
+        setInterval(() => {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }, 5000); // Change image every 5 seconds
+    } else {
+        console.log('No images found in the hero section.');
+    }
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -82,52 +87,121 @@ window.onload = function() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    var ourLoc = L.map('map').setView([12.93471401354978, 77.60615542856307], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(ourLoc);
+
+    function extractCoordinates(url) {
+        const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+        const matches = url.match(regex);
+        if (matches) {
+            return { lat: parseFloat(matches[1]), lng: parseFloat(matches[2]) };
+        }
+        return null;
+    }
+
+    function calculateRoute(start, end) {
+        L.Routing.control({
+            waypoints: [
+                L.latLng(start.lat, start.lng),
+                L.latLng(end.lat, end.lng),
+            ],
+            routeWhileDragging: true,
+        }).addTo(ourLoc);
+    }
+
+    function showRoute() {
+        var startUrl = document.getElementById("startUrl").value;
+        var endUrl = document.getElementById("endUrl").value;
+
+        var startLocation = extractCoordinates(startUrl);
+        var endLocation = extractCoordinates(endUrl);
+
+        if (startLocation && endLocation) {
+            ourLoc.setView([startLocation.lat, startLocation.lng], 13);
+            calculateRoute(startLocation, endLocation);
+        } else {
+            alert("Invalid Google Maps URLs. Please enter valid URLs.");
+        }
+    }
 
     if('geolocation' in navigator){
-        navigator.geolocation.getCurrentPosition(pos=>{
-
-            // Display the map
-            // var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 13);
-            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            // }).addTo(map);
-            // L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
-            //     .bindPopup('You are here')
-            //     .openPopup();
-            
-            var ourLoc = L.map('map').setView([12.936354284593302, 77.6062412905495], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(ourLoc);
+        navigator.geolocation.getCurrentPosition(pos => {
             L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(ourLoc)
                 .bindPopup('Our Location')
                 .openPopup();
-            
-
             document.getElementById("map").classList.remove("d-none");
-
-        },error=>{
-            let msg="";
-            switch(error.code){
+        }, error => {
+            let msg = "";
+            switch (error.code) {
                 case error.PERMISSION_DENIED:
-                    msg="User Denied Permission";
+                    msg = "User Denied Permission";
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    msg="Can't Locate User's Position";
+                    msg = "Can't Locate User's Position";
                     break;
                 case error.TIMEOUT:
-                    msg="Time out";
+                    msg = "Time out";
                     break;
             }
-         let errorArea=document.getElementById("errorArea");
-         errorArea.innerHTML=msg;
-         errorArea.classList.remove("d-none");
-
-
-        })
-
-    }else{
+            let errorArea = document.getElementById("errorArea");
+            errorArea.innerHTML = msg;
+            errorArea.classList.remove("d-none");
+        });
+    } else {
         console.log("Update your browser to get Geolocation Object");
     }
 
+    document.querySelector('.btn-consult').addEventListener('click', showRoute);
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tableBody = document.querySelector("#xmlTable tbody");
+
+    
+
+    fetch('doctors.xml')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, "text/xml");
+            const doctors = xmlDoc.getElementsByTagName("doctor");
+
+            // Clear table body before adding rows
+            tableBody.innerHTML = '';
+
+            for (let i = 0; i < doctors.length; i++) {
+                const specialization = doctors[i].getElementsByTagName("specialization")[0].textContent;
+                const opdTime = doctors[i].getElementsByTagName("opd_time")[0].textContent;
+
+                // Validate specialization and opd_time before displaying
+                if (["Cardiologist", "General Physician", "Pediatrician", "Neurologist", "Dermatologist", "Oncologist"].includes(specialization) &&
+                    /^[0-1][0-9]:[0-5][0-9] (AM|PM) - [0-1][0-9]:[0-5][0-9] (AM|PM)$/.test(opdTime)) {
+                    
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = doctors[i].getElementsByTagName("name")[0].textContent;
+                    row.insertCell(1).textContent = doctors[i].getElementsByTagName("qualification")[0].textContent;
+                    row.insertCell(2).textContent = specialization;
+                    row.insertCell(3).textContent = opdTime;
+                } else {
+                    console.error('Invalid data detected and skipped:', {specialization, opdTime});
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching XML data:', error);
+            tableBody.innerHTML = '<tr><td colspan="4">Error loading doctor data.</td></tr>';
+        });
+});
+
+
+

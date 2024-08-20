@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appointments SYSTEM "appointments.dtd">
+<appointments>
+    <appointment>
+        <name>John Doe</name>
+        <email>john@example.com</email>
+        <phone>1234567890</phone>
+        <address>
+            <street>Main Street</street>
+            <city>Springfield</city>
+            <state>IL</state>
+            <pin>62701</pin>
+        </address>
+        <doctor>Dr. Rohit</doctor>
+        <date>2024-08-20</date>
+        <message>Need a consultation for chest pain.</message>
+    </appointment>
+</appointments>

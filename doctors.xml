@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doctors SYSTEM "doctors.dtd">
+<doctors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doctors.xsd" xmlns="http://www.example.com/doctors">
+    
+    <doctor>
+        <name>Dr. Rohit</name>
+        <qualification>MD, Cardiology</qualification>
+        <specialization>Cardiologist</specialization>
+        <opd_time>10:00 AM - 01:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Arman</name>
+        <qualification>MBBS, MD</qualification>
+        <specialization>General Physician</specialization>
+        <opd_time>02:00 PM - 05:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Rahul</name>
+        <qualification>MD, Pediatrics</qualification>
+        <specialization>Pediatrician</specialization>
+        <opd_time>09:00 AM - 12:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Neha</name>
+        <qualification>MD, Neurology</qualification>
+        <specialization>Neurologist</specialization>
+        <opd_time>11:00 AM - 02:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Aditi</name>
+        <qualification>MD, Dermatology</qualification>
+        <specialization>Dermatologist</specialization>
+        <opd_time>01:00 PM - 04:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Sameer</name>
+        <qualification>MD, Oncology</qualification>
+        <specialization>Oncologist</specialization>
+        <opd_time>03:00 PM - 06:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Nitish</name>
+        <qualification>MBBS, MD</qualification>
+        <specialization>General Physician</specialization>
+        <opd_time>10:00 AM - 03:00 PM</opd_time>
+    </doctor>
+    <doctor>
+        <name>Dr. Tushar</name>
+        <qualification>MD, Dermatology</qualification>
+        <specialization>Dermatologist</specialization>
+        <opd_time>09:00 AM - 11:00 AM</opd_time>
+    </doctor>
+</doctors>

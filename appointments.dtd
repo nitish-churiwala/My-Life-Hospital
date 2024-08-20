@@ -1,0 +1,13 @@
+<!ELEMENT appointments (appointment+)>
+<!ELEMENT appointment (name, email, phone, address, doctor, date, message)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT address (street, city, state, pin)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT pin (#PCDATA)>
+<!ELEMENT doctor (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT message (#PCDATA)>

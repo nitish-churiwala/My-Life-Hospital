@@ -701,6 +701,7 @@ footer {
   resize: vertical;
 }
 
+
 /*** Button ***/
 .btn {
   font-family: "Nunito", sans-serif;
@@ -768,3 +769,48 @@ footer {
 .item2 {
   flex: 1;
 }
+
+
+
+.xml-table-section {
+  margin: 20px 0;
+}
+
+#xmlTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#xmlTable th, #xmlTable td {
+  padding: 10px;
+  text-align: left;
+}
+
+#xmlTable th {
+  background-color: #2e3c52;
+  color: white;
+}
+
+
+/* Geo Location  */
+
+.route-container{
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.route-group {
+  margin-bottom: 15px;
+}
+
+.route-group label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  color: var(--dark);
+}
+

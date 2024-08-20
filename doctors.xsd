@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/doctors" xmlns="http://www.example.com/doctors" elementFormDefault="qualified">
+    <xs:element name="doctors">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="doctor" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="qualification" type="xs:string"/>
+                            <xs:element name="specialization">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Cardiologist"/>
+                                        <xs:enumeration value="General Physician"/>
+                                        <xs:enumeration value="Pediatrician"/>
+                                        <xs:enumeration value="Neurologist"/>
+                                        <xs:enumeration value="Dermatologist"/>
+                                        <xs:enumeration value="Oncologist"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="opd_time">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="\d{2}:\d{2} (AM|PM) - \d{2}:\d{2} (AM|PM)"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
