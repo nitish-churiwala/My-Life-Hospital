@@ -5,47 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment - Hospital Web Page</title>
 
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
-
     <link href="bootstrap.min.css" rel="stylesheet" />
-    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .success-message {
+            color: green;
+            font-size: 0.9em;
+            display: none;
+        }
+        .input-error {
+            border-color: red;
+        }
+        .input-success {
+            border-color: green;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" style="background-color: #2e3c52;">
           <a href="index.html" class="navbar-brand p-0">
             <h1 class="m-0">
-              <img src="logo.jpg" width="60px" height="60px" /> My Life
-              Hospital
+              <img src="logo.jpg" width="60px" height="60px" /> My Life Hospital
             </h1>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
               <a href="index.html" class="nav-item nav-link" style="color: white;">Home</a>
-              <a href="doctor.html" class="nav-item nav-link" style="color: white;" >Doctors</a>
-              <a href="bookAppointment.html" class="nav-item nav-link active" style="color: white;"
-                >Book Appointment</a
-              >
+              <a href="doctor.html" class="nav-item nav-link" style="color: white;">Doctors</a>
+              <a href="bookAppointment.html" class="nav-item nav-link active" style="color: white;">Book Appointment</a>
               <a href="emergency.html" class="nav-item nav-link" style="color: white;">Emergency</a>
               <a href="about.html" class="nav-item nav-link" style="color: white;">About Us</a>
             </div>
@@ -58,38 +60,81 @@
     </div>
 
     <div class="appointment-container">
+        <h2 style="text-align: center; padding: 20px; padding-bottom: 40px;">Fill the form. Our team will reach you very soon.</h2>
 
-        <h2 style="text-align: center; padding: 20px; padding-bottom: 40px;"> Fill the form. Our team will reach you very soon.</h2>
-
-        <form class="appointment-form" id="appointmentForm" action="submitAppointment.php" method="post" onsubmit="return handleSubmit(event)">
+        <form class="appointment-form" id="appointmentForm">
             <div class="form-group" style="padding: 10px;">
-                <label for="name" >Full Name:</label>
+                <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
+                <div class="error-message" id="name-error">Full name is required and must be at least 3 characters.</div>
+                <div class="success-message" id="name-success">Valid name.</div>
             </div>
+
+            <!-- New Username Field -->
+            <div class="form-group" style="padding: 10px;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <div class="error-message" id="username-error">Username is required (at least 3 characters).</div>
+                <div class="success-message" id="username-success">Valid username.</div>
+            </div>
+
             <div class="form-group" style="padding: 10px;">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                <div class="error-message" id="email-error">A valid email is required.</div>
+                <div class="success-message" id="email-success">Valid email.</div>
             </div>
+
             <div class="form-group" style="padding: 10px;">
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phone-error">Phone number is required.</div>
             </div>
+
+            <!-- Password Fields -->
+            <div class="form-group" style="padding: 10px;">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="password-error">Password must be at least 8 characters and include letters and numbers.</div>
+                <div class="success-message" id="password-success">Strong password.</div>
+            </div>
+
+            <div class="form-group" style="padding: 10px;">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <div class="error-message" id="confirm-password-error">Passwords do not match.</div>
+                <div class="success-message" id="confirm-password-success">Passwords match.</div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group" style="padding: 10px;">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <div class="error-message" id="dob-error">You must be at least 18 years old.</div>
+            </div>
+
+            <!-- Other Form Fields -->
             <div class="form-group" style="padding: 10px;">
                 <label for="Street">Street:</label>
                 <input type="text" id="Street" name="Street" required>
+                <div class="error-message" id="street-error">Street address is required.</div>
             </div>
             <div class="form-group" style="padding: 10px;">
                 <label for="City">City:</label>
                 <input type="text" id="City" name="City" required>
+                <div class="error-message" id="city-error">City is required.</div>
             </div>
             <div class="form-group" style="padding: 10px;">
                 <label for="State">State:</label>
                 <input type="text" id="State" name="State" required>
+                <div class="error-message" id="state-error">State is required.</div>
             </div>
             <div class="form-group" style="padding: 10px;">
                 <label for="Pin">Pin Code:</label>
                 <input type="text" id="Pin" name="Pin" required>
+                <div class="error-message" id="pin-error">Pin code is required.</div>
             </div>
+
             <div class="form-group" style="padding: 10px;">
                 <label for="doctor">Select Doctor:</label>
                 <select id="doctor" name="doctor" required>
@@ -100,52 +145,55 @@
                     <option value="drAbhishek">Dr. Abhishek</option>
                     <option value="drHarsh">Dr. Harsh</option>
                 </select>
+                <div class="error-message" id="doctor-error">Selecting a doctor is required.</div>
             </div>
+
             <div class="form-group" style="padding: 10px;">
                 <label for="date">Preferred Date:</label>
                 <input type="date" id="date" name="date" required>
+                <div class="error-message" id="date-error">Preferred date is required.</div>
             </div>
+
             <div class="form-group" style="padding: 10px;">
                 <label for="message">Additional Message:</label>
                 <textarea id="message" name="message" rows="4"></textarea>
             </div>
-            <button type="submit" class="btn-consult" style="padding: 10px;">Submit</button>
+
+            <button type="submit" class="btn-consult" style="padding: 10px;" id="submitButton">Submit</button>
         </form>
     </div>
 
     <footer>
         <div class="footer-container">
             <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Quick Links</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="bookAppointment.html">Book Appointment</a></li>
-                    <li><a href="emergency.html">Emergency</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Contact Us</h3>
-                <p>123 Hospital Street,<br> Bangalore, Karnataka, 560029</p>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: nitish@gmail.com</p>
+                <h3>Get In Touch</h3>
+                <ul>
+                    <li>Address: XYZ Street, City</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Email: info@hospital.com</li>
+                </ul>
             </div>
             <div class="footer-column">
-                <h3 style="color: #EEF9FF;">Follow Us</h3>
-                <div class="social-media">
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                </div>
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 My Life Hospital. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="form-validation.js"></script>
 </body>
 </html>
